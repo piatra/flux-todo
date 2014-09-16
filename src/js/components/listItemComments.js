@@ -28,8 +28,9 @@ var ListItemComments = React.createClass({
   },
 
   _submitForm: function() {
-    var comment = this.refs.textarea.getDOMNode().value;
-    AppActions.saveComment(comment);
+    var textareaDOMNode = this.refs.textarea.getDOMNode();
+    AppActions.saveComment(textareaDOMNode.value);
+    textareaDOMNode.value = "";
     return false;
   },
 
